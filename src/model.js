@@ -1,5 +1,9 @@
-const db = require("./database/connection");
+const db = require('database');
 
-// functions that select/insert data to the DB go here
+function createOrder(type, currency, amount) {
+    db.insert('Order', {type, currency, amount});
+}
 
-module.exports = {};
+module.exports = {
+    createOrder,
+};
